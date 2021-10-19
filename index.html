@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expenses Calculator</title>
+    <!-- Bootstrap css  -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
+    <!-- google font  -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            font-family: 'Roboto Slab', serif;
+        }
+    </style>
+
+</head>
+
+<body>
+    <!-- Navigation bar  -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Expenses Calculator</a>
+        </div>
+    </nav>
+
+
+    <div class="container" style="min-height: 793px;">
+        <form>
+            <!-- 1st Item -->
+            <div class="form-row d-flex mt-4">
+                <div class="form-group col-md-1">
+                </div>
+                <div class="form-group col-md-4">
+                    <h2>Items</h2>
+                    <input type="text" class="form-control" id="item1" placeholder="Item 1">
+                </div>
+                <div class="form-group col-md-2">
+                </div>
+                <!-- 1st Price -->
+                <div class="form-group col-md-4">
+                    <h2>Price</h2>
+                    <input type="text" class="form-control" id="price1" placeholder="Price 1">
+                </div>
+                <div class="form-group col-md-1">
+                </div>
+            </div>
+
+            <!-- 2nd Item -->
+            <div class="form-row d-flex mt-3">
+                <div class="form-group col-md-1">
+                </div>
+                <div class="form-group col-md-4">
+                    <input type="text" class="form-control" id="item2" placeholder="Item 2">
+                </div>
+                <div class="form-group col-md-2">
+                </div>
+                <!-- 2nd Price -->
+                <div class="form-group col-md-4">
+                    <input type="text" class="form-control" id="price2" placeholder="Price 2">
+                </div>
+                <div class="form-group col-md-1">
+                </div>
+            </div>
+
+            <!-- 3rd price  -->
+            <div class="form-row d-flex mt-3">
+                <div class="form-group col-md-1">
+                </div>
+                <div class="form-group col-md-4">
+                    <input type="text" class="form-control" id="item3" placeholder="Item 3">
+                </div>
+                <div class="form-group col-md-2">
+                </div>
+                <!-- 3rd Price -->
+                <div class="form-group col-md-4">
+                    <input type="text" class="form-control" id="price3" placeholder="Price 3">
+                </div>
+                <div class="form-group col-md-1">
+                </div>
+            </div>
+
+            <!-- 4th price  -->
+            <div class="form-row d-flex mt-3">
+                <div class="form-group col-md-1">
+                </div>
+                <div class="form-group col-md-4">
+                    <input type="text" class="form-control" id="item4" placeholder="Item 4">
+                </div>
+                <div class="form-group col-md-2">
+                </div>
+                <!-- 4th Price -->
+                <div class="form-group col-md-4">
+                    <input type="text" class="form-control" id="price4" placeholder="Price 4">
+                </div>
+                <div class="form-group col-md-1">
+                </div>
+            </div>
+
+            <!-- 5th price  -->
+            <div class="form-row d-flex mt-3">
+                <div class="form-group col-md-1">
+                </div>
+                <div class="form-group col-md-4">
+                    <input type="text" class="form-control" id="item5" placeholder="Item 5">
+                </div>
+                <div class="form-group col-md-2">
+                </div>
+                <!-- 5th price -->
+                <div class="form-group col-md-4">
+                    <input type="text" class="form-control" id="price5" placeholder="Price 5">
+                </div>
+                <div class="form-group col-md-1">
+                </div>
+            </div>
+
+            <div class="form-row mt-4">
+                <div class="form-group col-md-12 d-flex justify-content-center">
+                    <a href="#totalPrice"><button type="button" class="btn btn-primary btn-lg" onclick="totalPrice()">Total</button></a>
+                </div>
+            </div>
+        </form>
+
+        <h2 class="text-center my-4">Total Price:&nbsp;&nbsp;<span id="totalPrice"></span><span id="tk"></span></h2>
+
+        <!-- Item and Price lis  -->
+        <div class="form-row d-flex justify-content-center mt-4">
+            <!-- style="margin-left: 95px;"  -->
+            <div class="form-group col-md-2 d-flex justify-content-center">
+                <ul id="itemlist" style="margin-bottom: 0px;">
+                </ul>
+            </div>
+            <div class="form-group col-md-2">
+                <!-- padding-left: 0px;  -->
+                <ul id="pricelist" style="list-style-type: none; margin-bottom: 0px;">
+                </ul>
+            </div>
+        </div>
+        <!-- Line  -->
+        <div class="form-row d-flex justify-content-center">
+            <div class="form-group col-md-12 text-center">
+                <p id="line" style="margin-bottom: 0px;"></p>
+            </div>
+        </div>
+
+        <div class="form-row d-flex justify-content-evenly  mt-2">
+            <!-- style="margin-left: 95px;" -->
+            <div class="form-group col-md-1">
+            </div>
+            <div class="form-group col-md-2 text-center">
+                <p id="itotal"></p>
+                <!-- <p>Total(tk):</p> -->
+            </div>
+            <div class="form-group col-md-2">
+                <!-- padding-left: 0px;  -->
+                <p id="ptotal"></p>
+                <!-- <p>54321</p> -->
+            </div>
+            <div class="form-group col-md-1">
+            </div>
+        </div>
+
+    </div>
+
+
+    <!-- Footer Section  -->
+    <footer class=" text-center bg-dark">
+        <div class="text-center p-3">
+            <p><small class="text-muted">© 2021 Copyright: Haishokor</small></p>
+        </div>
+    </footer>
+
+
+    <script src="main.js"></script>
+    <!-- Bootstrap Javascript -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
